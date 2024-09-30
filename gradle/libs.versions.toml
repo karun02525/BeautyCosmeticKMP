@@ -16,6 +16,21 @@ junit = "4.13.2"
 kotlin = "2.0.20"
 kotlinx-coroutines = "1.8.1"
 
+coroutines = "1.8.0"
+statelyCommon = "2.0.5"
+ktor = "2.3.12"
+coil3 = "3.0.0-alpha06"
+koltinxCoroutinesSwing = "1.8.0"
+
+date-time ="0.6.0"
+multiplatformSettings = "1.1.1"
+voyager = "1.0.0"
+koin = "3.4.3"
+koin-compose = "1.0.4"
+koinComposeMultiplatform = "3.6.0-alpha3"
+lifecycleViewmodelCompose = "2.8.0"
+koinMultiplatform="1.2.0-Beta4"
+
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
@@ -31,9 +46,50 @@ androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", nam
 androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 kotlinx-coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
 
+
+
+lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+kotlin-coroutines = {module="org.jetbrains.kotlinx: kotlinx-coroutines-core", version.ref="coroutines" }
+stately-common = {module = "co.touchlab: stately-common", version.ref = "statelyCommon" }
+
+
+multiplatform-settings-no-arg = {module = "com.russhwolf: multiplatform-settings-no-arg", version.ref="multiplatformSettings" }
+multiplatform-settings-coroutines = {module = "com.russhwolf: multiplatform-settings-coroutines", version.ref = "multiplatformSettings" }
+kotlinx-datetime = {module="org.jetbrains.kotlinx:kotlinx-datetime", version.ref="date-time" }
+
+
+voyager-navigator = {module = "cafe.adriel.voyager: voyager-navigator", version.ref = "voyager" }
+voyager-screen-model = { module ="cafe.adriel.voyager: voyager-screenmodel", version.ref= "voyager" }
+voyager-transitions = {module = "cafe.adriel.voyager: voyager-transitions", version.ref="voyager" }
+
+
+voyager-koin = { module = "cafe.adriel.voyager: voyager-koin", version.ref = "voyager" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin-compose"}
+koin-composeVM = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koinMultiplatform" }
+
+
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref="ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref="ktor" }
+ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor"}
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref= "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref="ktor" }
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref="ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+
+
+
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3" }
+coil-compose-core = { module = "io.coil-kt.coil3:coil-compose-core", version.ref = "coil3" }
+coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coil3" }
+coil-mp = { module = "io.coil-kt.coil3:coil", version.ref = "coil3" }
+
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinxSerialization = { id="org.jetbrains.kotlin.plugin.serialization", version.ref="kotlin" }
