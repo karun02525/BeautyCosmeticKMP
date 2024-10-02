@@ -18,6 +18,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import beautycosmetickmp.composeapp.generated.resources.Res
+import beautycosmetickmp.composeapp.generated.resources.item1
+import beautycosmetickmp.composeapp.generated.resources.item2
+import beautycosmetickmp.composeapp.generated.resources.item3
+import beautycosmetickmp.composeapp.generated.resources.item3_5
+import beautycosmetickmp.composeapp.generated.resources.item4
+import org.jetbrains.compose.resources.DrawableResource
 
 @Preview
 @Composable
@@ -46,3 +53,5 @@ fun HomeScreen() {
         }
     }
 }
+
+

@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyListScope
@@ -25,11 +26,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import beautycosmetickmp.composeapp.generated.resources.Res
+import beautycosmetickmp.composeapp.generated.resources.favorite
 import beautycosmetickmp.composeapp.generated.resources.item1
 import beautycosmetickmp.composeapp.generated.resources.item2
 import beautycosmetickmp.composeapp.generated.resources.item3
 import beautycosmetickmp.composeapp.generated.resources.item3_5
 import beautycosmetickmp.composeapp.generated.resources.item4
+import beautycosmetickmp.composeapp.generated.resources.profile
 import org.example.project.ui.components.EasyGrid
 import org.example.project.ui.screen.home.ItemRecommendation.Companion.itemRecommendation
 import org.example.project.ui.theme.GREEN
@@ -88,6 +91,7 @@ private fun Item(item: ItemRecommendation) {
                 .wrapContentSize(),
             contentAlignment = Alignment.Center
         ) {
+
             Image(
                 painter = painterResource(item.icon),
                 contentDescription = "",
@@ -97,6 +101,16 @@ private fun Item(item: ItemRecommendation) {
                     .height(120.dp)
                     .fillMaxWidth()
             )
+            Image(
+                painter = painterResource(Res.drawable.profile),
+                contentDescription = "",
+                modifier = Modifier
+                    .padding(top = 10.dp, start = 10.dp)
+                    .align(Alignment.TopStart)
+                    .size(22.dp)
+            )
+
+
         }
         Text(
             "$" + item.price,
