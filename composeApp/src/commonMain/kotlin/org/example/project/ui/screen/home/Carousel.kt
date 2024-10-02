@@ -27,13 +27,13 @@ import coil3.compose.AsyncImage
 @Composable
 fun BannerCarouselWidget(
     banners: List<BannerModel> = listOf(
+        BannerModel(imageUrl = "https://i.ibb.co/Zdfctzj/banner1.png", contentDescription = ""),
         BannerModel(imageUrl = "https://png.pngtree.com/background/20230414/original/pngtree-makeup-lipstick-foundation-cosmetics-beauty-makeup-fantasy-color-advertising-background-picture-image_2424119.jpg", contentDescription = ""),
         BannerModel(imageUrl = "https://res.cloudinary.com/conferences-and-exhibitions-pvt-ltd/image/upload/v1708084984/India_becomes_pivotal_growth_driver.jpg", contentDescription = ""),
         BannerModel(imageUrl = "https://images.news18.com/ibnlive/uploads/2021/10/makeup-kit-16349877184x3.jpg", contentDescription = ""),
         BannerModel(imageUrl = "https://franchiseindia.s3.ap-south-1.amazonaws.com/uploads/content/wi/art/5b289fdb7d3b0.jpg", contentDescription = ""),
 
         ),
-    modifier: Modifier = Modifier
 ) {
     val pagerState = rememberPagerState(pageCount = {
         banners.size
@@ -41,7 +41,7 @@ fun BannerCarouselWidget(
 
     Box(
         contentAlignment = Alignment.BottomCenter,
-        modifier = modifier
+        modifier = Modifier
     ) {
         HorizontalPager(
             state = pagerState,

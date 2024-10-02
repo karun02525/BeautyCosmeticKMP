@@ -59,6 +59,7 @@ kotlin {
 
             implementation("tech.annexflow.compose:constraintlayout-compose-multiplatform:0.3.0-alpha01")
 
+            implementation("androidx.compose.foundation:foundation:1.7.3")
 
 
             implementation(libs.coil.compose.core)
