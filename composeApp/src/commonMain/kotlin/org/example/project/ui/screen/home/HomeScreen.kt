@@ -24,6 +24,7 @@ import beautycosmetickmp.composeapp.generated.resources.item2
 import beautycosmetickmp.composeapp.generated.resources.item3
 import beautycosmetickmp.composeapp.generated.resources.item3_5
 import beautycosmetickmp.composeapp.generated.resources.item4
+import org.example.project.ui.screen.details.CarouselDotsAnimation
 import org.jetbrains.compose.resources.DrawableResource
 
 @Preview

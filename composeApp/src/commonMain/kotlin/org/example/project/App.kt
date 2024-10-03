@@ -20,6 +20,7 @@ import coil3.request.CachePolicy
 import coil3.request.crossfade
 import coil3.util.DebugLogger
 import okio.FileSystem
+import org.example.project.ui.screen.details.DetailScreen
 import org.example.project.ui.theme.GREEN
 import org.example.project.ui.theme.GREY
 import org.example.project.ui.theme.LIGHT_GREY
@@ -36,8 +37,9 @@ fun App() {
         }
 
 
-        SplashScreen()
-        HomeScreen()
+       // SplashScreen()
+       // HomeScreen()
+        DetailScreen()
     }
 }
 

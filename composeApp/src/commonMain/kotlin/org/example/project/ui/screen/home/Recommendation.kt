@@ -67,7 +67,7 @@ fun LazyListScope.recommendationTile() {
     }
     item {
         RecommendationList()
-        Spacer(Modifier.height(50.dp))
+        Spacer(Modifier.height(80.dp))
     }
 }
 
@@ -102,7 +102,7 @@ private fun Item(item: ItemRecommendation) {
                     .fillMaxWidth()
             )
             Image(
-                painter = painterResource(Res.drawable.profile),
+                painter = painterResource(Res.drawable.favorite),
                 contentDescription = "",
                 modifier = Modifier
                     .padding(top = 10.dp, start = 10.dp)

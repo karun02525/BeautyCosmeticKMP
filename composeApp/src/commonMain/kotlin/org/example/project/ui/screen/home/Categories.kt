@@ -50,6 +50,7 @@ fun LazyListScope.categorySection() {
                   "See all",
                   fontSize = 15.sp,
                   color = GREEN,
+                  fontWeight = FontWeight.SemiBold,
                   modifier = Modifier
               )
           }

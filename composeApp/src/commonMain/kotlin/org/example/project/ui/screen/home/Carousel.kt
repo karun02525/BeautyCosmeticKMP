@@ -4,8 +4,10 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -22,16 +24,29 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import org.example.project.ui.theme.GREEN
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun BannerCarouselWidget(
     banners: List<BannerModel> = listOf(
         BannerModel(imageUrl = "https://i.ibb.co/Zdfctzj/banner1.png", contentDescription = ""),
-        BannerModel(imageUrl = "https://png.pngtree.com/background/20230414/original/pngtree-makeup-lipstick-foundation-cosmetics-beauty-makeup-fantasy-color-advertising-background-picture-image_2424119.jpg", contentDescription = ""),
-        BannerModel(imageUrl = "https://res.cloudinary.com/conferences-and-exhibitions-pvt-ltd/image/upload/v1708084984/India_becomes_pivotal_growth_driver.jpg", contentDescription = ""),
-        BannerModel(imageUrl = "https://images.news18.com/ibnlive/uploads/2021/10/makeup-kit-16349877184x3.jpg", contentDescription = ""),
-        BannerModel(imageUrl = "https://franchiseindia.s3.ap-south-1.amazonaws.com/uploads/content/wi/art/5b289fdb7d3b0.jpg", contentDescription = ""),
+        BannerModel(
+            imageUrl = "https://png.pngtree.com/background/20230414/original/pngtree-makeup-lipstick-foundation-cosmetics-beauty-makeup-fantasy-color-advertising-background-picture-image_2424119.jpg",
+            contentDescription = ""
+        ),
+        BannerModel(
+            imageUrl = "https://res.cloudinary.com/conferences-and-exhibitions-pvt-ltd/image/upload/v1708084984/India_becomes_pivotal_growth_driver.jpg",
+            contentDescription = ""
+        ),
+        BannerModel(
+            imageUrl = "https://images.news18.com/ibnlive/uploads/2021/10/makeup-kit-16349877184x3.jpg",
+            contentDescription = ""
+        ),
+        BannerModel(
+            imageUrl = "https://franchiseindia.s3.ap-south-1.amazonaws.com/uploads/content/wi/art/5b289fdb7d3b0.jpg",
+            contentDescription = ""
+        ),
 
         ),
 ) {
@@ -39,8 +54,7 @@ fun BannerCarouselWidget(
         banners.size
     })
 
-    Box(
-        contentAlignment = Alignment.BottomCenter,
+    Column(
         modifier = Modifier
     ) {
         HorizontalPager(
@@ -56,19 +70,26 @@ fun BannerCarouselWidget(
         }
         Row(
             Modifier
-                .fillMaxWidth()
-                .padding(bottom = 8.dp),
+                .padding(top = 10.dp)
+                .fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
         ) {
             repeat(pagerState.pageCount) { iteration ->
-                val color = if (pagerState.currentPage == iteration) Color.DarkGray else Color.LightGray
-                Box(
-                    modifier = Modifier
-                        .padding(2.dp)
-                        .clip(CircleShape)
-                        .background(color)
-                        .size(8.dp)
-                )
+                if (pagerState.currentPage == iteration) {
+                    Spacer(
+                        modifier = Modifier
+                            .padding(2.dp)
+                            .background(GREEN, RoundedCornerShape(30.dp))
+                            .size(height = 6.dp, width = 12.dp)
+                    )
+                } else {
+                    Spacer(
+                        modifier = Modifier
+                            .padding(2.dp)
+                            .background(Color.LightGray, CircleShape)
+                            .size(6.dp)
+                    )
+                }
             }
         }
     }
@@ -77,7 +98,7 @@ fun BannerCarouselWidget(
 @Composable
 fun BannerWidget(
     imageUrl: String,
-    contentDescription: String="",
+    contentDescription: String = "",
     modifier: Modifier = Modifier
 ) {
     AsyncImage(
@@ -91,4 +112,4 @@ fun BannerWidget(
     )
 }
 
-data class BannerModel(val imageUrl:String,val contentDescription:String)
+data class BannerModel(val imageUrl: String, val contentDescription: String)
