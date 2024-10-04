@@ -1,7 +1,7 @@
 package org.example.project.ui.screen.home
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -32,7 +32,6 @@ import beautycosmetickmp.composeapp.generated.resources.item2
 import beautycosmetickmp.composeapp.generated.resources.item3
 import beautycosmetickmp.composeapp.generated.resources.item3_5
 import beautycosmetickmp.composeapp.generated.resources.item4
-import beautycosmetickmp.composeapp.generated.resources.profile
 import org.example.project.ui.components.EasyGrid
 import org.example.project.ui.screen.home.ItemRecommendation.Companion.itemRecommendation
 import org.example.project.ui.theme.GREEN
@@ -40,7 +39,7 @@ import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 
 
-fun LazyListScope.recommendationTile() {
+fun LazyListScope.recommendationTile(onClickDetails:()->Unit) {
     item {
         Row(
             modifier = Modifier
@@ -66,22 +65,23 @@ fun LazyListScope.recommendationTile() {
         }
     }
     item {
-        RecommendationList()
+        RecommendationList(onClickDetails)
         Spacer(Modifier.height(80.dp))
     }
 }
 
 @Composable
-private fun RecommendationList() {
+private fun RecommendationList(onClickDetails: () -> Unit) {
     EasyGrid(nColumns = 2, items = itemRecommendation) {
-        Item(it)
+        Item(it,onClickDetails)
     }
 }
 
 @Composable
-private fun Item(item: ItemRecommendation) {
+private fun Item(item: ItemRecommendation, onClickDetails: () -> Unit) {
     Column(
         modifier = Modifier
+            .clickable { onClickDetails() }
             .padding(horizontal=8.dp, vertical = 5.dp)
             .fillMaxWidth()
             .wrapContentHeight()

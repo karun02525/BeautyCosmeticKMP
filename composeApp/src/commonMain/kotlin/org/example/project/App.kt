@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
+import cafe.adriel.voyager.navigator.Navigator
+import cafe.adriel.voyager.transitions.SlideTransition
 import org.example.project.ui.screen.home.HomeScreen
 import org.example.project.ui.screen.splash.SplashScreen
 import org.example.project.ui.theme.DARK_GREY
@@ -20,6 +22,7 @@ import coil3.request.CachePolicy
 import coil3.request.crossfade
 import coil3.util.DebugLogger
 import okio.FileSystem
+import org.example.project.ui.screen.cart.CartScreen
 import org.example.project.ui.screen.details.DetailScreen
 import org.example.project.ui.theme.GREEN
 import org.example.project.ui.theme.GREY
@@ -36,10 +39,9 @@ fun App() {
             readAsyncImage(context)
         }
 
-
-       // SplashScreen()
-       // HomeScreen()
-        DetailScreen()
+        Navigator(SplashScreen()){
+            SlideTransition(it)
+        }
     }
 }
 
